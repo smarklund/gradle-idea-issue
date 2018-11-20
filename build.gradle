@@ -17,7 +17,7 @@ task showResources(type: DefaultTask) {
 
 task showJava(type: DefaultTask) {
     doLast {
-        sourceSets.main.resources.files.each {
+        sourceSets.main.java.files.each {
             logger.quiet "File: ${it.path}"
         }
     }
