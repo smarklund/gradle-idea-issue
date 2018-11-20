@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+project.sourceSets.main.java.srcDir 'java'
+project.sourceSets.main.resources.srcDir 'java'
+
+project.sourceSets.test.java.srcDir 'test'
+project.sourceSets.test.resources.srcDir 'test'
+
+task showResources(type: DefaultTask) {
+    doLast {
+        sourceSets.main.resources.files.each {
+            logger.quiet "File: ${it.path}"
+        }
+    }
+}
+
+task showJava(type: DefaultTask) {
+    doLast {
+        sourceSets.main.resources.files.each {
+            logger.quiet "File: ${it.path}"
+        }
+    }
+}
+
